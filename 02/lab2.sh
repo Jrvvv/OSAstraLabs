@@ -42,11 +42,31 @@ export PROMPT_COMMAND="history -a; history -c; history -r; ${PROMPT_COMMAND}"
 # 4.3d any command and check it in hist
 date
 history
-
-# part 5
-# add DATE var with date, TIME var with time and DATE_TIME as their sum
+# 4.4 add DATE var with date, TIME var with time and DATE_TIME as their sum
 DATE=`date +%F`
 TIME=`date +%T`
 DATE_TIME="${DATE} ${TIME}"
 
 echo ${DATE_TIME}
+
+# part 5
+# print all files conatining one or more numbers from /bin and /bins
+ls /bin | grep '[0-9]'
+ls /sbin | grep '[0-9]'
+
+# set mcedit as default for vipw
+export EDITOR=/usr/bin/mcedit
+sudo vipw
+# EDITOR=/usr/bin/mcedit sudo vipw
+
+# print HH:MM in hostname
+# try export
+export HOSTNAME="ru01wks163-$(date +%H):$(date +%M).miet.stu"
+# new term -- nothing happens
+sudo bash -c "echo \"export HOSTNAME=\"ru01wks163-$(date +%H):$(date +%M).miet.stu\"\" >> .bashrc"
+# new term -- woo a lya
+
+# make dirs with all months of current year
+mkdir $(date +%Y)-{01..12}
+
+
