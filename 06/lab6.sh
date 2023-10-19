@@ -59,7 +59,8 @@ sudo su user2
 # Преобразуем обои, создаем новый /usr/share/images/spacefun.png файл, устанавливаем в качестве фона рабочего стола
 sudo bash -c "svg-convert /usr/share/images/desktop-base/spacefun-wallpaper-widescreen.svg > /usr/share/images/spacefun.png"
 # Меняем путь до обоев
-sudo sed -i 's/^WALLPAPER=.*/WALLPAPER=\/usr\/share\/images\/spacefun.png' /usr/share/desktop-base/grub_background.sh
+# sudo sed -i 's/^WallPaper=.*/WallPaper=\/usr\/share\/images\/spacefun.png' /usr/share/desktop-base/grub_background.sh
+sudo sed -i 's/^WallPaper=.*/WallPaper=\/usr\/share\/images\/spacefun.png' /usr/share/fly-wm/theme/default.themerc
 sudo sed -i 's/WallPaperPos =.*/WallPaperPos = Stretch/' /usr/share/fly-wm/theme/default.themerc
 
 # Part 6
