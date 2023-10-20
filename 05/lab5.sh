@@ -27,7 +27,9 @@ nmcli connection show | head -n 2 > first_connection.conf
 # Wired connection 1  18bfb7a4-f133-37de-a4b6-6950c9f4a658  ethernet  eth0  
 
 # Delete first connection and add new (custom IP, name Network_1, all other is same)
-nmcli connection delete id "Wired connection 1"
+# nmcli connection delete id "Wired connection 1"
+# OR
+sudo nmcli connection down "Wired connection 1"
 nmcli con add type ethernet con-name Network_1 ifname eth0 ip4 192.168.1.0/24
 # nmcli con add con-name Network_1 ip4 192.168.1.0/24 ipv4.method manual
 nmcli connection show
