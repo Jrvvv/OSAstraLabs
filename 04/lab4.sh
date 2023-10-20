@@ -9,6 +9,11 @@ top
 # to add RUSER and place after USER
 # 'f', 'd'/'space' on this parameter
 # 'right arrow', arrows key to move, enter to finish
+# print all process with several threads
+ps -eLf | awk '{
+  if ($6 > '1')
+    print $10;
+}'
 
 # part 2
 # new terminal
